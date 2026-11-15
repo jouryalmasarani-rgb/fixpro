@@ -8,9 +8,11 @@ import Footer from '@/components/Footer'
 import { WhyChoose, ServicePreparation, FAQ, ServiceArea } from '@/components/RepairSections'
 import SectionReveal from '@/components/SectionReveal'
 import CommonFaults from '@/components/CommonFaults'
+import { RepairRequestProvider } from '@/components/RepairRequestProvider'
 
 export default function Home() {
   return (
+    <RepairRequestProvider>
     <main className="min-h-screen bg-[#faf9f6]">
       <Navbar />
       <Hero />
@@ -25,5 +27,6 @@ export default function Home() {
       <SectionReveal><ServiceArea /></SectionReveal>
       <SectionReveal><Footer /></SectionReveal>
     </main>
+    </RepairRequestProvider>
   )
 }
