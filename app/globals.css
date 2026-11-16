@@ -6,7 +6,7 @@ section[id], footer[id] { scroll-margin-top: 7rem; }
 a, button { -webkit-tap-highlight-color: transparent; }
 .eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #16804a; }
 .section-title { margin-top: 1rem; font-size: clamp(2rem, 3.5vw, 3.25rem); font-weight: 600; letter-spacing: -.045em; line-height: 1.12; text-wrap: balance; }
-.primary-button { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; border-radius: 999px; background: #16894e; padding: 1rem 1.5rem; color: white; font-size: .875rem; font-weight: 600; transition: background .2s, box-shadow .2s; }
+.primary-button { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; border-radius: 999px; background: #16894e; padding: 1rem 1.5rem; color: white; font-size: .875rem; font-weight: 600; transition: background .2s, box-shadow .2s, translate .22s; }
 .primary-button:hover { background: #13834a; }
 .site-container { width: 100%; max-width: 1224px; margin-inline: auto; padding-inline: 1.5rem; }
 .section-space { padding-block: 5rem; }
@@ -16,6 +16,17 @@ section.bg-\[\#081e29\] .eyebrow, section.bg-\[\#071823\] .eyebrow { color: #8be
 section.bg-\[\#081e29\] .section-description, section.bg-\[\#071823\] .section-description { color: #a9bbc5; }
 @media (min-width: 768px) { .site-container { padding-inline: 2.5rem; } .section-space { padding-block: 6rem; } }
 :focus-visible { outline: 2px solid #16804a; outline-offset: 5px; }
+.gentle-card { transition: translate .28s cubic-bezier(.22,1,.36,1), box-shadow .28s, border-color .28s; }
+.gentle-button { transition: translate .22s, background-color .22s, border-color .22s; }
+.primary-button > svg, .gentle-button > svg, .gentle-card a > svg { transition: translate .22s; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .gentle-card:hover { translate: 0 -4px; box-shadow: 0 14px 30px -22px rgb(24 65 40 / .28); }
+  .primary-button:hover, .gentle-button:hover { translate: 0 -2px; }
+  .primary-button:hover > svg, .gentle-button:hover > svg, .gentle-card a:hover > svg { translate: 2px 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .primary-button:active, .gentle-button:active { translate: 0 0; }
+}
 @keyframes fixpro-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .fixpro-marquee-track { animation: fixpro-marquee var(--duration, 35s) linear infinite; }
 .fixpro-marquee:hover .fixpro-marquee-track { animation-play-state: paused !important; }

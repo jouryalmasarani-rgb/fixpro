@@ -9,8 +9,8 @@ const RepairRequestContext = createContext<{
   setDevice: (device: RepairDevice) => void
 } | null>(null)
 
-export function RepairRequestProvider({ children }: { children: ReactNode }) {
-  const [device, setDevice] = useState<RepairDevice>('Waschmaschine')
+export function RepairRequestProvider({ children, initialDevice = 'Waschmaschine' }: { children: ReactNode; initialDevice?: RepairDevice }) {
+  const [device, setDevice] = useState<RepairDevice>(initialDevice)
   return <RepairRequestContext.Provider value={{ device, setDevice }}>{children}</RepairRequestContext.Provider>
 }
 

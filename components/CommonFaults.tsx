@@ -19,7 +19,7 @@ export default function CommonFaults() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {faults.map(({ icon: Icon, title, text, device }) => (
-            <article key={title} className="group flex flex-col rounded-[24px] border border-[#e0e8e1] bg-white p-6 transition-[border-color,box-shadow] hover:border-[#a2cfb0] hover:shadow-[0_12px_28px_-20px_rgba(28,85,48,.3)]">
+            <article key={title} className="gentle-card group flex flex-col rounded-[24px] border border-[#e0e8e1] bg-white p-6 hover:border-[#a2cfb0] hover:shadow-[0_12px_28px_-20px_rgba(28,85,48,.3)]">
               <div className="flex items-center justify-between"><span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#edf5ee] text-[#258454]"><Icon size={22} strokeWidth={1.5} /></span><span className="text-[9px] text-[#6f8a76]">{device}</span></div>
               <h3 className="mt-6 text-lg font-semibold leading-snug tracking-tight">{title}</h3>
               <p className="mt-3 flex-1 text-sm leading-7 text-stone-500">{text}</p>

@@ -15,7 +15,7 @@ export default function Stats() {
       <motion.div
         initial={reduced ? false : { opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.12 }}
+        viewport={{ once: false, amount: 'some', margin: '0px 0px -100px 0px' }}
         transition={{ duration: reduced ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[32px] border border-[#dce8df] bg-[#eaf3ec] p-6 text-[#17372a] md:rounded-[44px] md:p-12 lg:p-14"
       >
@@ -36,7 +36,7 @@ export default function Stats() {
               key={title}
               initial={reduced ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.2, margin: '0px 0px -70px 0px' }}
               transition={{ duration: reduced ? 0 : 0.5, delay: reduced ? 0 : index * 0.12 }}
               whileHover={reduced ? undefined : { y: -5 }}
               className="rounded-[24px] border border-white/80 bg-white/85 p-6 shadow-[0_8px_25px_-20px_rgba(20,65,40,0.3)] md:p-7"

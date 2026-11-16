@@ -8,10 +8,11 @@ export default function SectionReveal({ children }: { children: ReactNode }) {
 
   return (
     <motion.div
-      initial={reduced ? false : { opacity: 0, y: 28 }}
+      data-section-reveal
+      initial={reduced ? false : { opacity: 0, y: 48 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.08 }}
-      transition={{ duration: reduced ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: false, amount: 'some', margin: '0px 0px -110px 0px' }}
+      transition={{ duration: reduced ? 0 : 0.85, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
